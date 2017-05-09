@@ -1,0 +1,58 @@
+#quest {
+    form {
+        padding: 0 2% 2% 2%;
+
+        .quest_item {
+            padding-bottom: 2%;
+
+            label,
+            .value {
+                display: inline-block;
+                vertical-align: top; 
+            }
+            label {
+                width: 10%;
+                line-height: 120%;
+            }
+            .value {
+                padding-left: 1%;
+            }
+
+            input[type="text"], 
+            input[type="email"] {
+                padding: 3%;
+            }
+        }
+
+        .button {
+            background: #003300;
+            border: 0px;
+            cursor: pointer;
+            color: #fff;
+            padding: 1%;
+            display: block;
+            margin-left: 11%;
+
+            &:hover {
+                background: black;
+            }
+
+            &[disabled] {
+                cursor: default;
+                opacity: 0.6;
+                background: gray;
+            }
+        }
+
+        .error {
+            color: red;
+            margin-left: 11%;
+            padding-bottom: 2%;
+        }
+    }
+
+    .success {
+        margin-left: 11%;
+        font-size: 120%;
+    }
+}

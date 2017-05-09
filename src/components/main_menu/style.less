@@ -1,0 +1,21 @@
+#main_menu {
+    background: green;
+    padding: 2%;
+    li {
+        display: inline-block;
+        padding: 0px 2%;
+        &:first-child {
+            padding-left: 0px;
+        }
+        a {
+            color: white;
+            opacity: 0.8;
+
+            &.active,
+            &:hover {
+                opacity: 1;
+                text-decoration: underline;
+            }
+        }
+    }
+}
