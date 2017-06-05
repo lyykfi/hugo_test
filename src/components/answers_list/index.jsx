@@ -4,7 +4,7 @@ import ReactTable from "react-table";
 import { bindActionCreators } from "redux";
 
 import "react-table/react-table.css";
-  
+
 import DEFAULT_QUESTIONS from "../../data/questions";
 
 import {
@@ -14,8 +14,8 @@ import {
 /**
  *
  */
-class AnswersList extends React.Component<any, any> {
-    
+class AnswersList extends React.Component {
+
     /**
      *
      */
@@ -29,11 +29,11 @@ class AnswersList extends React.Component<any, any> {
     }
 
     /**
-     * 
+     *
      */
-    public componentWillMount() {
+    componentWillMount() {
         const newColumns = [];
-        
+
         DEFAULT_QUESTIONS.forEach((answer) => {
             const newColumn = {
                 header: answer.title,
@@ -53,7 +53,7 @@ class AnswersList extends React.Component<any, any> {
     /**
      *
      */
-    public render() {
+    render() {
         return <ReactTable
             data={this.state.answers}
             columns={this.state.columns}
@@ -61,9 +61,9 @@ class AnswersList extends React.Component<any, any> {
     }
 
     /**
-     * 
+     *
      */
-    public componentWillReceiveProps(nextProps) {
+    componentWillReceiveProps(nextProps) {
         this.setState({
             answers: nextProps.answers,
         });

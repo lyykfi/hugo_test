@@ -18,7 +18,7 @@ import STRINGS from "../../data/strings";
 /**
  *
  */
-class Quest extends React.Component<any, any> {
+class Quest extends React.Component {
     /**
      *
      */
@@ -32,18 +32,18 @@ class Quest extends React.Component<any, any> {
     }
 
     /**
-     * 
+     *
      */
-    public componentWillMount() {
+    componentWillMount() {
         this.initAnswers();
 
         this.props.getAnswersList();
     }
 
     /**
-     * 
+     *
      */
-    public initAnswers() {
+    initAnswers() {
         const newAnswers = [];
 
         this.props.questions.forEach((item) => {
@@ -56,9 +56,9 @@ class Quest extends React.Component<any, any> {
     }
 
     /**
-     * 
+     *
      */
-    public onChangeValue(value, item) {
+    onChangeValue(value, item) {
         let active = false;
         const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -76,25 +76,25 @@ class Quest extends React.Component<any, any> {
     /**
      *
      */
-    public renderQuestions() {
+    renderQuestions() {
         const questions = [];
-        
+
         this.state.answers.forEach((item) => questions.push(<QuestItem item={item} key={item.name} onChangeValue={this.onChangeValue.bind(this)} />));
 
         return questions;
     }
 
     /**
-     * 
+     *
      */
-    public onClick() {
+    onClick() {
         this.props.persistQuest(this.state.answers);
     }
 
     /**
      *
      */
-    public render() {
+    render() {
         let error = "";
 
         if (this.props.form.status === FORM_STATUSES.ERROR) {
@@ -114,7 +114,7 @@ class Quest extends React.Component<any, any> {
 
                     <input disabled={!this.state.active} onClick={this.onClick.bind(this)} className="button" type="button" value="Answer"/>
                 </form>
-                : 
+                :
                 <p className="success">Thank you!</p>
             }
         </div>;

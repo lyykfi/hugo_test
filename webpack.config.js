@@ -1,9 +1,9 @@
 const config = {
     entry: {
-        main: './src/index.tsx'
+        main: './src/index.jsx'
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.less', '.css']
+        extensions: ['.js', '.jsx', '.less', '.css']
     },
     output: {
         filename: 'bundle.js',
@@ -14,27 +14,27 @@ const config = {
             {
                 test: /\.css$/,
                 use: [{
-                    loader: "style-loader" 
+                    loader: "style-loader"
                 }, {
-                    loader: "css-loader" 
+                    loader: "css-loader"
                 }]
             },
             {
-                test: /\.ts$/, 
-                use: 'ts-loader'
+                test: /\.js$/,
+                use: 'babel-loader'
             },
             {
-                test: /\.tsx$/, 
-                use: 'ts-loader'
+                test: /\.jsx$/,
+                use: 'babel-loader'
             },
             {
-                test: /\.less$/, 
+                test: /\.less$/,
                 use: [{
-                    loader: "style-loader" 
+                    loader: "style-loader"
                 }, {
-                    loader: "css-loader" 
+                    loader: "css-loader"
                 }, {
-                    loader: "less-loader" 
+                    loader: "less-loader"
                 }]
             }
         ]

@@ -4,8 +4,8 @@ import AnswersList from "../../components/answers_list/index";
 /**
  *
  */
-class QuestionsPage extends React.Component<any, any> {
-    public render() {
+class QuestionsPage extends React.Component {
+    render() {
         return <div>
             <h1>Questions</h1>
             <AnswersList />

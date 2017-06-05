@@ -3,7 +3,7 @@ import * as React from "react";
 /**
  *
  */
-class QuestItem extends React.Component<any, any> {
+class QuestItem extends React.Component {
     /**
      *
      */
@@ -16,9 +16,9 @@ class QuestItem extends React.Component<any, any> {
     }
 
     /**
-     * 
+     *
      */
-    public componentWillReceiveProps(nextProps) {
+    componentWillReceiveProps(nextProps) {
         this.setState({
             value: nextProps.item.value,
         });
@@ -27,9 +27,9 @@ class QuestItem extends React.Component<any, any> {
     /**
      *
      */
-    public handleChange(event) {
+    handleChange(event) {
         const value = event.target.value;
-        
+
         this.setState({value});
 
         this.props.item.value = value;
@@ -39,21 +39,21 @@ class QuestItem extends React.Component<any, any> {
     /**
      *
      */
-    public handleChangeCheckbox(event) {
+    handleChangeCheckbox(event) {
         const value = "" + event.target.checked;
-        
+
         this.setState({value});
 
         this.props.item.value = value;
         this.props.onChangeValue();
 
         console.log(this.props.item);
-    }
+    } 
 
     /**
      *
      */
-    public render() {
+    render() {
         let input;
 
         const item = this.props.item;
